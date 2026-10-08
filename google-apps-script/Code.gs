@@ -17,6 +17,9 @@ const SPREADSHEET_ID = '1wLsYacQ4nX0UhkboLaKBaV4thqeUOm9KzR4E2mmY2zg';
 // To turn notifications off, change this to: const NOTIFY_EMAIL = '';
 const NOTIFY_EMAIL = 'jomersonnazaire@gmail.com';
 
+// Sender name shown in your inbox for those notification emails.
+const NOTIFY_SENDER_NAME = 'Github Portfolio';
+
 // Tab names and column order (must match row 1 of each tab).
 const SHEET_MESSAGES = 'Messages';
 const SHEET_PAGEVIEWS = 'Page Views';
@@ -163,6 +166,7 @@ function notify_(name, email, subject, message, page) {
   try {
     MailApp.sendEmail({
       to: NOTIFY_EMAIL,
+      name: NOTIFY_SENDER_NAME,
       replyTo: email,
       subject: 'New portfolio message from ' + name + (subject ? ': ' + subject : ''),
       body: 'Name: ' + name + '\nEmail: ' + email + (subject ? '\nSubject: ' + subject : '') +
