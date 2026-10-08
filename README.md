@@ -1,152 +1,45 @@
-# Modern Portfolio Website
+# Jomerson Nazaire, Digital Portfolio
 
-A sleek, responsive portfolio website for Jomerson - Software Engineer, built with pure HTML, CSS, and JavaScript.
+Personal portfolio of Jomerson Nazaire, Software Engineer (SAP Business One, C#/.NET, integrations).
+Live: https://jomersonnazaire.github.io/Digital-Portfolio/
 
-## ✨ Features
+Plain static site (HTML, CSS, vanilla JS). No build step. It works on GitHub Pages under the `/Digital-Portfolio/` subpath because every URL is relative.
 
-### 🎨 Design
-- **Dark Theme**: Modern dark color scheme with blue accent highlights
-- **Responsive Design**: Fully responsive layout that works on all devices
-- **Smooth Animations**: Fade-in effects, hover animations, and scroll-triggered animations
-- **Modern Typography**: Clean Inter font family for professional appearance
+## Files
 
-### 🧭 Navigation
-- **Sticky Navigation**: Fixed navigation bar with smooth scrolling
-- **Active Link Highlighting**: Current section highlighted in navigation
-- **Mobile Menu**: Hamburger menu for mobile devices
-- **Smooth Transitions**: Animated navigation between sections
+| Path | What it is |
+|---|---|
+| `index.html` | Home page: hero, About, Tech Stack, Services, Projects, Contact |
+| `project.html` | Project detail page, e.g. `project.html?slug=turks-one-portal` |
+| `styles.css` | All styles (dark theme, responsive, reduced-motion support) |
+| `script.js` | Mobile menu, hero video loading, contact flow, anonymous page views, project detail rendering |
+| `google-apps-script/` | `Code.gs` (Google Sheet web app for messages and page views) and `SETUP.md` (how to deploy it) |
+| `Assets/Jomerson-Nazaire-Resume.pdf` | Resume downloaded by the "My Resume" button |
+| `Assets/Video/` | Hero background video (WebM + MP4, 720p) and poster images |
+| `Assets/Images/` | Headshot, project and service images (WebP) |
+| `Assets/favicon.svg`, `Assets/apple-touch-icon.png`, `Assets/og-image.jpg` | Icons and social-sharing image |
 
-### 🏠 Sections
+## Editing projects
 
-#### Home Section
-- Personal introduction and professional tagline
-- Call-to-action buttons for projects and resume
-- Technology stack showcase with icons:
-  - JavaScript
-  - AWS SQS
-  - C#
-  - .NET Core
-- Animated profile circle with rotation effect
+Project cards live in `index.html` (section `#projects`, featured project first). The case-study content for each slug lives in the `PROJECTS` object at the top of `script.js`: title, one-line summary, client, type, year, role, problem, what was built, tech, results (optional), cover image and screenshot gallery (each image with alt text and a caption). Leave a field out (for example `year`, `role` or `results`) and the detail page simply skips it. Screenshots open in an accessible full-size viewer (native `<dialog>`, arrow keys to browse, Esc to close); without JavaScript the links open the image file.
 
-#### About Section
-- Detailed professional background
-- Animated statistics counters:
-  - 50+ Completed Projects
-  - 98% Client Satisfaction
-  - 5 Years of Experience
-- Personal and professional story
+To add a project:
 
-#### Projects Section
-- Showcase of 4 featured projects:
-  - E-Commerce Platform
-  - Task Management System
-  - Analytics Dashboard
-  - Mobile Banking App
-- Interactive project cards with hover effects
-- Technology tags for each project
+1. Add `name-800.webp` (800 px wide) and a larger `name-1600.webp` to `Assets/Images/Project-Portfolio/`. Blur client names, people's names, emails, phone numbers and amounts before exporting.
+2. Add an entry to `PROJECTS` in `script.js` (the image `large` value is the width in the larger file name; `w`/`h` are its pixel size).
+3. Add a card in `index.html` that links to `project.html?slug=<your-slug>`.
 
-#### Contact Section
-- Professional contact form with validation
-- Multiple contact methods:
-  - Email integration
-  - WhatsApp redirect
-  - Viber redirect
-- Social media links (GitHub, LinkedIn, Email)
-- Form submission with notification system
+Old slugs that were merged into newer case studies (`ph-tax-modules`, `sap-b1-integration`) redirect via `PROJECT_ALIASES` in `script.js`.
 
-### 🚀 Interactive Features
-- **Scroll Animations**: Elements animate as they come into view
-- **Statistics Counter**: Numbers animate on scroll
-- **Contact Form**: Full validation and submission handling
-- **Modal System**: Contact method selection after form submission
-- **Notification System**: User feedback for actions
-- **Parallax Effects**: Subtle parallax scrolling on hero section
+## Contact form and page views
 
-## 🛠️ Technologies Used
+Both are controlled by `SHEET_ENDPOINT` near the top of `script.js`.
 
-- **HTML5**: Semantic markup structure
-- **CSS3**: Modern styling with Flexbox and Grid
-- **JavaScript (ES6+)**: Interactive functionality and animations
-- **Font Awesome**: Icon library
-- **Google Fonts**: Inter font family
+- **Empty (`''`):** nothing is sent anywhere. The form opens a dialog where the visitor chooses Email, WhatsApp or Viber, and the message opens there pre-filled. No page views are counted.
+- **Set to the Apps Script `/exec` URL** (see `google-apps-script/SETUP.md`): the form posts the message straight to the owner's Google Sheet ("Messages" tab). It shows "Sending…", then "Message sent, thank you!" only after the sheet confirms. If sending fails or takes longer than 15 seconds, it shows an error with Email and WhatsApp links, and the typed text stays in the form. Each page load also records one anonymous page view ("Page Views" tab) with a random visitor ID (localStorage) and session ID (sessionStorage). It sets no cookies and stores no personal data. Nothing is sent on localhost or when Do Not Track is on.
 
-## 📱 Responsive Breakpoints
+## Images and video
 
-- **Desktop**: 1200px and above
-- **Tablet**: 768px to 1199px  
-- **Mobile**: Below 768px
-- **Small Mobile**: Below 480px
+Keep images at about 2x their display size and in WebP. The hero video is only loaded on screens 768 px and wider, and never when the visitor prefers reduced motion or has Save-Data on.
 
-## 🚀 How to Run
-
-1. **Download/Clone** all files to a folder
-2. **Open** `index.html` in your web browser
-3. **Enjoy** the fully functional portfolio website!
-
-No build process or dependencies required - just open and run!
-
-## 📋 Files Structure
-
-```
-Portfolio/
-├── index.html          # Main HTML structure
-├── styles.css          # All CSS styling and animations  
-├── script.js           # JavaScript functionality
-└── README.md           # This documentation
-```
-
-## 🎯 Customization
-
-### Personal Information
-- Update name, title, and descriptions in `index.html`
-- Modify contact information and social links
-- Replace placeholder content with your actual information
-
-### Styling  
-- Change color scheme by updating CSS custom properties in `:root`
-- Modify animations by adjusting CSS keyframes and transitions
-- Update typography by changing font families
-
-### Functionality
-- Customize form submission behavior in `script.js`
-- Add more interactive features or animations
-- Integrate with actual backend services for form handling
-
-## 🔧 Contact Form Integration
-
-The contact form currently:
-- Validates all input fields
-- Shows success/error notifications  
-- Provides contact method options (Email, WhatsApp, Viber)
-- Auto-generates formatted messages
-
-To integrate with a backend:
-1. Replace the form submission simulation in `script.js`
-2. Add your actual API endpoint
-3. Update WhatsApp and Viber phone numbers
-4. Customize email addresses and content
-
-## 📞 Contact Methods
-
-Update these in the code:
-- **Email**: `jomerson@example.com` (replace with actual email)
-- **WhatsApp**: `1234567890` (replace with actual number)  
-- **Viber**: `1234567890` (replace with actual number)
-- **Social Links**: Update href attributes with actual profiles
-
-## 🎉 Browser Support
-
-- Chrome 88+
-- Firefox 85+  
-- Safari 14+
-- Edge 88+
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-**Created with ❤️ by Claude for Jomerson's Portfolio**
-
-Ready to make an amazing first impression! 🌟
+Icons are inline SVGs from Font Awesome Free (CC BY 4.0).

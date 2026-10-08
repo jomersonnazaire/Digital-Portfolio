@@ -1,79 +1,82 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Detail</title>
+    <title>Projects | Jomerson Nazaire</title>
+    <meta name="description" content="Project case studies by Jomerson Nazaire: SAP Business One portals, add-ons and integrations, .NET and React web apps, WPF desktop apps and Crystal Reports.">
+    <link rel="canonical" href="https://jomersonnazaire.github.io/Digital-Portfolio/project.html">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="icon" href="Assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="Assets/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Jomerson Nazaire">
+    <meta property="og:title" content="Projects | Jomerson Nazaire">
+    <meta property="og:description" content="SAP Business One portals, add-ons and integrations, .NET and React web apps, WPF desktop apps and Crystal Reports.">
+    <meta property="og:image" content="https://jomersonnazaire.github.io/Digital-Portfolio/Assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://jomersonnazaire.github.io/Digital-Portfolio/Assets/og-image.jpg">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        .ongoing {
-            text-align: center;
-            margin: 80px auto;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            font-family: 'Inter', sans-serif;
-        }
-        .ongoing h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        .ongoing p {
-            font-size: 1.1rem;
-            color: #666;
-        }
-        .ongoing i {
-            font-size: 2.5rem;
-            color: #007BFF;
-            margin-bottom: 15px;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"></noscript>
 </head>
 <body class="project-page">
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html#home" class="logo-text" style="text-decoration:none;">Jomerson Nazaire</a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="index.html#home" class="nav-link">Home</a>
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="index.html#services" class="nav-link">Services</a>
-                <a href="index.html#projects" class="nav-link">Projects</a>
-                <!-- <a href="index.html#certifications" class="nav-link">Certifications</a> -->
-                <a href="index.html#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true" focusable="false">
+    <!-- Icons: Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com - License: CC BY 4.0 (https://fontawesome.com/license/free) -->
+    <symbol id="i-arrow-left" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></symbol>
+    </svg>
 
-    <main style="padding-top: 100px;">
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main">
+            <a class="nav-logo" href="index.html">Jomerson Nazaire</a>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#tech-stack" class="nav-link">Tech Stack</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#projects" class="nav-link is-active" aria-current="true">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="project-main" tabindex="-1">
         <div class="container">
-            <div id="project-detail">
-                <div class="ongoing">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <h1>Currently Ongoing</h1>
-                    <p>This project page is in progress. Please check back later for updates!</p>
-                </div>
+            <p class="breadcrumb"><a href="index.html#projects"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>All projects</a></p>
+            <div id="project-detail" class="project-detail">
+                <noscript>
+                    <div class="project-missing">
+                        <h1>Project details need JavaScript</h1>
+                        <p>Please enable JavaScript, or <a href="index.html#projects">go back to the projects list</a>.</p>
+                    </div>
+                </noscript>
             </div>
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Jomerson. All rights reserved.</p>
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span data-year>2026</span> Jomerson Nazaire. All rights reserved.</p>
+            <a href="index.html#contact" class="footer-top">Get in touch</a>
+            <p class="footer-note" id="analytics-note" hidden>This site counts anonymous page views: no cookies, no personal data, and Do Not Track is respected.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
